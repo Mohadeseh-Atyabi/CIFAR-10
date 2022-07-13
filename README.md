@@ -7,11 +7,7 @@ In this problem, we want to classify CIFAR-10 dataset images. This dataset is a 
 
 ![cifar10](https://user-images.githubusercontent.com/72689599/178667359-fcb52b54-48c4-4de3-8c7c-729a9beab1cf.png)
 
-The dimensions of the images in this dataset are equal to 32 (length) by 32 (width) by 3 (RGB color channels).
-
-![image](https://user-images.githubusercontent.com/72689599/178669613-02c3facd-b844-4065-96c7-4fd0ce615f2b.png)
-
-Here, we first need to convert color images to grayscale, i.e. consisting of only one channel, in a pre-processing step. After this step, we will have 32x32 images. As a result, the input layer of the network has 32x32=1024 neurons, each neuron shows the brightness of a pixel as an int number from 0 to 255.
+The dimensions of the images in this dataset are equal to 32 (length) by 32 (width) by 3 (RGB color channels). Here, we first need to convert color images to grayscale, i.e. consisting of only one channel, in a pre-processing step. After this step, we will have 32x32 images. As a result, the input layer of the network has 32x32=1024 neurons, each neuron shows the brightness of a pixel as an int number from 0 to 255.
 
 Here, to reduce the computational volume, we only use the images of the first 4 classes of this dataset. As a result, our output layer will contain 4 neurons. The neuron with the highest activation value is selected as the category detected by our model. For this neural network, we consider two hidden layers, each of which has 16 neurons.
 So the structure of our neural network will be as follows:
@@ -19,3 +15,11 @@ So the structure of our neural network will be as follows:
 ![image](https://user-images.githubusercontent.com/72689599/178670675-7c8970c9-14ae-49b6-a154-4797a30991b7.png)
 
 
+## Feedforward
+To calculate the output from the input in neural networks, the following operations are performed in each layer.
+
+![image](https://user-images.githubusercontent.com/72689599/178672388-ebacb3ac-036f-4972-9914-e021492a66d1.png)
+
+As a result, in the implementation of the neural network, for the weights between both layers, we consider a k by n matrix, where k is the number of neurons in the next layer and n is the number of neurons in the current layer. As a result of each row of W matrix, the weights are related to a specific neuron in the next layer. Also, for the biases between both layers, a separate vector is considered whose dimensions are equal to the number of neurons in the next layer.
+
+![image](https://user-images.githubusercontent.com/72689599/178672666-f434a41e-df6e-41f2-b5fe-aad9aa717f82.png)
