@@ -23,3 +23,15 @@ To calculate the output from the input in neural networks, the following operati
 As a result, in the implementation of the neural network, for the weights between both layers, we consider a k by n matrix, where k is the number of neurons in the next layer and n is the number of neurons in the current layer. As a result of each row of W matrix, the weights are related to a specific neuron in the next layer. Also, for the biases between both layers, a separate vector is considered whose dimensions are equal to the number of neurons in the next layer.
 
 ![image](https://user-images.githubusercontent.com/72689599/178672666-f434a41e-df6e-41f2-b5fe-aad9aa717f82.png)
+
+## Backpropagation
+As you know, the neural network learning process means minimizing the cost function:
+
+![image](https://user-images.githubusercontent.com/72689599/178953723-dbe397f4-bea4-43b6-878c-014e2e7cbf30.png)
+
+This work is done with the help of Descent Gradient method, in which we make the desired changes on the parameters by obtaining partial variances of the Cost function with respect to all parameters:
+
+![image](https://user-images.githubusercontent.com/72689599/178953796-b6a1d505-5693-4495-b659-bd5525ef83e9.png)
+
+Consider the hyperparameters as follows: the size_batch value is equal to 16, the learning coefficient is equal to 0.3, and the number of epochs is equal to 10. At the end of this step, report the accuracy of the model and the execution time of the learning process for the same 200 data. Considering that the number of epochs and training data are small, it is expected that at the end of the learning process, the accuracy of the model in this case is about 30% on average.
+
