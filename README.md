@@ -35,3 +35,12 @@ This work is done with the help of Descent Gradient method, in which we make the
 
 Consider the hyperparameters as follows: the size_batch value is equal to 16, the learning coefficient is equal to 0.3, and the number of epochs is equal to 10. At the end of this step, report the accuracy of the model and the execution time of the learning process for the same 200 data. Considering that the number of epochs and training data are small, it is expected that at the end of the learning process, the accuracy of the model in this case is about 30% on average.
 
+## Vectorization
+So far, we only worked with the first 200 data of the dataset because the execution time of the current training process is too long and it is not optimal for learning the network. To solve this problem, we use a concept called vectorization.
+
+In the first feedforward stage, we implemented the algorithm from the beginning in vectorized form. Now, at this stage, you must also vectorize the backpropagation. At the end of this step, it is expected that the calculation of the partial derivatives of each layer (i.e. the derivatives with respect to W, b, and a) will be done without using for loop. At the end of this step, it is expected that your code will run in much less time than the previous step.
+
+## Model testing
+Now that we have optimized the algorithm to a good extent, we can perform train on the total data of 4 classes (8000 data in total). Set the size_batch value to 16, the learning coefficient to 0.3, and the number of epochs to 40.
+
+At the end of this step, report the accuracy of the model for the train set as well as for the test set. Also plot the average cost as before. For this step, similar to the previous case, your code should output the results of 10 executions as an average.
